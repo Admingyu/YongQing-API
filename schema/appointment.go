@@ -5,5 +5,6 @@ type AppointmentSchema struct {
 	Date     string `json:"date" binding:"required,max=200"`
 	Location string `json:"location" binding:"required,max=200"`
 	Phone    string `json:"phone" binding:"required,max=20"`
+	Project  string `json:"proj" binding:"max=50"`
 	Memo     string `json:"memo" binding:"max=500"`
 }

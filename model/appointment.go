@@ -10,5 +10,6 @@ type Appointment struct {
 	Location string `json:"location" gorm:"type:varchar(200);comment:'地址'"`
 	Phone    string `json:"phone" gorm:"type:varchar(20);comment:'电话'"`
 	Memo     string `json:"memo" gorm:"type:varchar(500);comment:'备注'"`
+	Project  string `json:"project" gorm:"type:varchar(50);comment:'项目'"`
 	Status   string `json:"status" gorm:"type:enum('SUBMITTED', 'CANCELED', 'SETTLED');default:'SUBMITTED';comment:'状态'"`
 }

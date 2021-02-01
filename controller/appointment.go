@@ -37,7 +37,7 @@ func MakeAppointment(c *gin.Context) {
 	}
 	var params schema.AppointmentSchema
 	c.ShouldBindJSON(&params)
-	err := database.DB.Model(model.Appointment{}).Create(&model.Appointment{UserID: UserID.(int), Name: params.Name, Date: params.Date, Location: params.Location, Phone: params.Phone, Memo: params.Memo}).Error
+	err := database.DB.Model(model.Appointment{}).Create(&model.Appointment{UserID: UserID.(int), Name: params.Name, Date: params.Date, Location: params.Location, Phone: params.Phone, Memo: params.Memo, Project: params.Project}).Error
 	errors.HandleError(err)
 	Success(c, nil)
 }

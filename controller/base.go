@@ -9,5 +9,5 @@ func Success(c *gin.Context, data interface{}) {
 }
 
 func Fail(c *gin.Context, msg string) {
-	c.JSON(200, gin.H{"status": "SUCCESS", "message": msg, "data": nil})
+	c.JSON(200, gin.H{"status": "FAIL", "message": msg, "data": nil})
 }

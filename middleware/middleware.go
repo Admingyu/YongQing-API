@@ -23,5 +23,9 @@ func UserLogin(c *gin.Context) {
 
 	var userID int
 	database.DB.Model(model.User{}).Where("open_id=?", h.OpenID).Select("id").Scan(&userID)
+	if userID == 0 {
+		c.AbortWithStatusJSON(200, gin.H{"status": "FAIL", "message": "LoginNeeded", "data": nil})
+	}
 	c.Set("userID", userID)
+	c.Next()
 }
