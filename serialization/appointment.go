@@ -1,6 +1,7 @@
 package serialization
 
 type AppointmentSer struct {
+	ID        int      `json:"id"`
 	Name      string   `json:"name" `
 	Project   string   `json:"project" `
 	Date      string   `json:"date"`

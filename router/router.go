@@ -15,4 +15,5 @@ func init() {
 	api := GinEngine.Group("/api")
 	controller.RegisterAppointment(api)
 	controller.RegisterUser(api)
+	controller.RegisterCase(api)
 }

@@ -20,6 +20,6 @@ func init() {
 	DB, err = gorm.Open(conn, &config)
 	errors.HandleError(err)
 
-	DB.AutoMigrate(model.Appointment{})
+	DB.AutoMigrate(model.Appointment{}, model.Case{}, model.Category{}, model.Slides{})
 
 }
